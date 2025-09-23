@@ -11,5 +11,31 @@
     "finalizada": false,
     "dificultad": "medio",
     "estado": "en curso"
+  },
+  {
+    "id": 83247,
+    "titulo": "emilio",
+    "descripcion": "morocho",
+    "archivo": null,
+    "fechaCreacion": "2025-09-23T00:56:39.681Z",
+    "fechaActualizacion": null,
+    "fechaVencimiento": "2028-05-05T00:00:00.000Z",
+    "fechaFinalizacion": null,
+    "finalizada": true,
+    "dificultad": "medio",
+    "estado": "terminada"
+  },
+  {
+    "id": 95296,
+    "titulo": "lichy",
+    "descripcion": "nada",
+    "archivo": null,
+    "fechaCreacion": "2025-09-23T00:57:12.106Z",
+    "fechaActualizacion": null,
+    "fechaVencimiento": "2029-08-07T00:00:00.000Z",
+    "fechaFinalizacion": null,
+    "finalizada": false,
+    "dificultad": "alto",
+    "estado": "en curso"
   }
 ]

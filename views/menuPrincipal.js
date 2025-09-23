@@ -1,15 +1,10 @@
-const readline = require('readline');
+const rl = require('../utils/terminal');
 const agregarTarea = require('../controllers/agregarTarea');
 const buscarTareaPorTitulo = require('../controllers/buscarTarea');
-const verTareas = require('../controllers/verTareas');
 const verDetalles = require('../controllers/verDetalles');
 const eliminarTarea = require('../controllers/eliminarTarea');
 const tareas = require('../data/tareas');
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+const menuVerTareas = require('./menuVerTareas');
 
 function menuPrincipal() {
   console.log('\n¿Qué deseas hacer?');
@@ -37,12 +32,7 @@ function menuPrincipal() {
         break;
 
       case '2':
-        const lista = verTareas();
-        rl.question('¿Ver detalles de cuál? (número): ', (num) => {
-          const tarea = lista[parseInt(num) - 1];
-          if (tarea) verDetalles(tarea);
-          menuPrincipal();
-        });
+        menuVerTareas(menuPrincipal);
         break;
 
       case '3':
@@ -51,7 +41,7 @@ function menuPrincipal() {
           if (resultados.length === 0) {
             console.log('❌ No se encontraron tareas.');
           } else {
-            resultados.forEach((t, i) => console.log(`${i + 1}. ${t.titulo}`));
+            resultados.forEach((t, i) => console.log(`${i + 1}. ${t.titulo} - ${t.estado}`));
             rl.question('¿Ver detalles de cuál? (número): ', (num) => {
               const tarea = resultados[parseInt(num) - 1];
               if (tarea) verDetalles(tarea);
