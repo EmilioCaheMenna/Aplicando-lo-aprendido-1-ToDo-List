@@ -39,15 +39,20 @@ function menuVerTareas(callbackVolver) {
       return menuVerTareas(callbackVolver);
     }
 
-    rl.question('\n¿Deseas ver los detalles de alguna?\nIntroduce el número para verlo o 0 para volver.\n> ', (num) => {
-      const index = parseInt(num);
-      if (index === 0) return menuVerTareas(callbackVolver);
-      const tarea = lista[index - 1];
-      if (tarea) {
-        verDetalles(tarea);
-      } else {
-        console.log('❌ Número inválido.');
+    rl.question('\n¿Deseas ver los detalles de alguna?\nIntroduce el número para verlo o 0 para volver.\n> ', (numRaw) => {
+      const num = (numRaw || '').trim();
+      const index = parseInt(num, 10);
+      if (isNaN(index)) {
+        console.log('❌ Entrada no válida. Introduce un número.');
+        return menuVerTareas(callbackVolver);
       }
+      if (index === 0) return menuVerTareas(callbackVolver);
+      if (index < 1 || index > lista.length) {
+        console.log('❌ Número fuera de rango.');
+        return menuVerTareas(callbackVolver);
+      }
+      const tarea = lista[index - 1];
+      verDetalles(tarea);
       menuVerTareas(callbackVolver);
     });
   });

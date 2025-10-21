@@ -37,5 +37,44 @@
     "finalizada": false,
     "dificultad": "alto",
     "estado": "en curso"
+  },
+  {
+    "id": 16329,
+    "titulo": "maria",
+    "descripcion": "alto",
+    "archivo": null,
+    "fechaCreacion": "2025-10-20T13:27:02.288Z",
+    "fechaActualizacion": null,
+    "fechaVencimiento": "2027-05-06T00:00:00.000Z",
+    "fechaFinalizacion": null,
+    "finalizada": false,
+    "dificultad": "bajo",
+    "estado": "en curso"
+  },
+  {
+    "id": 12092,
+    "titulo": "mama",
+    "descripcion": "alta",
+    "archivo": null,
+    "fechaCreacion": "2025-10-20T14:14:44.918Z",
+    "fechaActualizacion": null,
+    "fechaVencimiento": "2029-02-27T00:00:00.000Z",
+    "fechaFinalizacion": null,
+    "finalizada": true,
+    "dificultad": null,
+    "estado": "terminada"
+  },
+  {
+    "id": 95347,
+    "titulo": "tata",
+    "descripcion": "grande",
+    "archivo": null,
+    "fechaCreacion": "2025-10-20T21:31:39.969Z",
+    "fechaActualizacion": null,
+    "fechaVencimiento": "2026-05-03T00:00:00.000Z",
+    "fechaFinalizacion": null,
+    "finalizada": true,
+    "dificultad": null,
+    "estado": "terminada"
   }
 ]

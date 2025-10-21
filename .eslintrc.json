@@ -1,0 +1,23 @@
+{
+  "env": {
+    "node": true,
+    "es2021": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 12
+  },
+  "rules": {
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "ClassDeclaration",
+        "message": "No use de 'class' — usa constructores y prototipos en su lugar."
+      },
+      {
+        "selector": "ClassExpression",
+        "message": "No use de 'class' — usa constructores y prototipos en su lugar."
+      }
+    ]
+  }
+}

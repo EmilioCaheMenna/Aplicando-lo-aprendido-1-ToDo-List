@@ -17,11 +17,20 @@ function menuPrincipal() {
   rl.question('> ', (opcion) => {
     switch (opcion) {
       case '1':
-        rl.question('Título: ', (titulo) => {
-          rl.question('Descripción: ', (descripcion) => {
-            rl.question('Dificultad (bajo/medio/alto): ', (dificultad) => {
-              rl.question('Estado (pendiente/en curso/terminada): ', (estado) => {
-                rl.question('Fecha de vencimiento (YYYY-MM-DD): ', (fechaVencimiento) => {
+        rl.question('Título: ', (tituloRaw) => {
+          const titulo = (tituloRaw || '').trim();
+          if (!titulo) {
+            console.log('❌ El título no puede estar vacío.');
+            return menuPrincipal();
+          }
+          rl.question('Descripción: ', (descripcionRaw) => {
+            const descripcion = (descripcionRaw || '').trim();
+            rl.question('Dificultad (bajo/medio/alto): ', (dificultadRaw) => {
+              const dificultad = (dificultadRaw || 'medio').trim();
+              rl.question('Estado (pendiente/en curso/terminada): ', (estadoRaw) => {
+                const estado = (estadoRaw || 'pendiente').trim();
+                rl.question('Fecha de vencimiento (YYYY-MM-DD): ', (fechaVencimientoRaw) => {
+                  const fechaVencimiento = (fechaVencimientoRaw || '').trim() || null;
                   agregarTarea({ titulo, descripcion, dificultad, estado, fechaVencimiento });
                   menuPrincipal();
                 });
